@@ -1,0 +1,105 @@
+[INFO src/plugin.rs:227] - Starting rustc analysis...
+[INFO src/timer.rs:8] - rustc took 0.0170s
+[INFO src/timer.rs:8] - global_ctxt took 0.0000s
+[INFO src/find_bodies.rs:52] - Starting find_bodies...
+[INFO src/timer.rs:8] - find_bodies took 0.0013s
+[INFO src/plugin.rs:303] - analyzing BodyId { hir_id: HirId(DefId(0:14 ~ code_3[7473]::main).202) }
+[INFO analysis/mod.rs:33] - Typeck'ing body BodyId { hir_id: HirId(DefId(0:14 ~ code_3[7473]::main).202) }
+thread 'rustc' panicked at compiler/rustc_infer/src/infer/region_constraints/mod.rs:434:23:
+index out of bounds: the len is 19 but the index is 19
+stack backtrace:
+   0: rust_begin_unwind
+             at /rustc/5d3d3479d774754856db2db3e439dfb88ef3c52f/library/std/src/panicking.rs:647:5
+   1: core::panicking::panic_fmt
+             at /rustc/5d3d3479d774754856db2db3e439dfb88ef3c52f/library/core/src/panicking.rs:72:14
+   2: core::panicking::panic_bounds_check
+             at /rustc/5d3d3479d774754856db2db3e439dfb88ef3c52f/library/core/src/panicking.rs:208:5
+   3: rustc_middle::ty::relate::structurally_relate_tys::<rustc_infer::infer::relate::generalize::Generalizer<rustc_infer::infer::relate::generalize::CombineDelegate>>
+   4: <rustc_infer::infer::relate::generalize::Generalizer<rustc_infer::infer::relate::generalize::CombineDelegate> as rustc_middle::ty::relate::TypeRelation>::tys
+   5: rustc_middle::ty::relate::structurally_relate_tys::<rustc_infer::infer::relate::generalize::Generalizer<rustc_infer::infer::relate::generalize::CombineDelegate>>
+   6: <rustc_infer::infer::relate::generalize::Generalizer<rustc_infer::infer::relate::generalize::CombineDelegate> as rustc_middle::ty::relate::TypeRelation>::tys
+   7: <rustc_infer::infer::relate::equate::Equate as rustc_middle::ty::relate::TypeRelation>::tys
+   8: <rustc_middle::ty::generic_args::GenericArg as rustc_middle::ty::relate::Relate>::relate
+   9: <core::result::Result<T,E> as rustc_type_ir::interner::CollectAndApply<T,R>>::collect_and_apply
+  10: rustc_infer::infer::relate::higher_ranked::<impl rustc_infer::infer::relate::combine::CombineFields>::higher_ranked_sub
+  11: rustc_infer::infer::InferCtxt::commit_if_ok
+  12: <rustc_infer::infer::InferCtxt as argus_lib::rustc::InferCtxtExt>::error_implies
+  13: argus_lib::analysis::tls::drain_implied_ambiguities
+  14: argus_lib::analysis::entry::process_obligation
+  15: <rustc_trait_selection::solve::fulfill::FulfillmentCtxt as rustc_infer::traits::engine::TraitEngine>::select_where_possible
+  16: <rustc_hir_typeck::fn_ctxt::FnCtxt>::check_argument_types
+  17: <rustc_hir_typeck::fn_ctxt::FnCtxt>::check_call
+  18: <rustc_hir_typeck::fn_ctxt::FnCtxt>::check_expr_with_expectation_and_args
+  19: <rustc_hir_typeck::fn_ctxt::FnCtxt>::check_match
+  20: <rustc_hir_typeck::fn_ctxt::FnCtxt>::check_expr_with_expectation_and_args
+  21: <rustc_hir_typeck::fn_ctxt::FnCtxt>::check_expr_with_expectation_and_args
+  22: <rustc_hir_typeck::fn_ctxt::FnCtxt>::check_block_with_expected
+  23: <rustc_hir_typeck::fn_ctxt::FnCtxt>::check_expr_with_expectation_and_args
+  24: rustc_hir_typeck::check::check_fn
+  25: rustc_hir_typeck::inspect_typeck
+  26: argus_lib::analysis::obligations
+  27: <argus_cli::plugin::ArgusCallbacks<A,T,F> as rustc_driver_impl::Callbacks>::after_expansion::{{closure}}::{{closure}}
+  28: alloc::vec::in_place_collect::<impl alloc::vec::spec_from_iter::SpecFromIter<T,I> for alloc::vec::Vec<T>>::from_iter
+  29: rustc_middle::ty::context::GlobalCtxt::enter
+  30: <argus_cli::plugin::ArgusCallbacks<A,T,F> as rustc_driver_impl::Callbacks>::after_expansion
+  31: rustc_interface::interface::run_compiler::<core::result::Result<(), rustc_span::ErrorGuaranteed>, rustc_driver_impl::run_compiler::{closure#0}>::{closure#0}
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+[INFO src/plugin.rs:303] - analyzing BodyId { hir_id: HirId(DefId(0:19 ~ code_3[7473]::{impl#2}::clone).16) }
+[INFO analysis/mod.rs:33] - Typeck'ing body BodyId { hir_id: HirId(DefId(0:19 ~ code_3[7473]::{impl#2}::clone).16) }
+[INFO src/plugin.rs:303] - analyzing BodyId { hir_id: HirId(DefId(0:21 ~ code_3[7473]::{impl#3}::fmt).28) }
+[INFO analysis/mod.rs:33] - Typeck'ing body BodyId { hir_id: HirId(DefId(0:21 ~ code_3[7473]::{impl#3}::fmt).28) }
+[INFO src/plugin.rs:303] - analyzing BodyId { hir_id: HirId(DefId(0:8 ~ code_3[7473]::{impl#0}::nouveau_objet).14) }
+[INFO analysis/mod.rs:33] - Typeck'ing body BodyId { hir_id: HirId(DefId(0:8 ~ code_3[7473]::{impl#0}::nouveau_objet).14) }
+[INFO src/plugin.rs:303] - analyzing BodyId { hir_id: HirId(DefId(0:10 ~ code_3[7473]::{impl#1}::nouveau_sac_a_dos).17) }
+[INFO analysis/mod.rs:33] - Typeck'ing body BodyId { hir_id: HirId(DefId(0:10 ~ code_3[7473]::{impl#1}::nouveau_sac_a_dos).17) }
+[INFO src/plugin.rs:303] - analyzing BodyId { hir_id: HirId(DefId(0:11 ~ code_3[7473]::{impl#1}::ajouter_objet).25) }
+[INFO analysis/mod.rs:33] - Typeck'ing body BodyId { hir_id: HirId(DefId(0:11 ~ code_3[7473]::{impl#1}::ajouter_objet).25) }
+[INFO src/plugin.rs:303] - analyzing BodyId { hir_id: HirId(DefId(0:11 ~ code_3[7473]::{impl#1}::ajouter_objet).54) }
+[INFO analysis/mod.rs:33] - Typeck'ing body BodyId { hir_id: HirId(DefId(0:11 ~ code_3[7473]::{impl#1}::ajouter_objet).54) }
+[WARN analysis/transform.rs:496] - necessary queries empty! []
+[WARN analysis/transform.rs:255] - failed to build method call table for HirId(DefId(0:11 ~ code_3[7473]::{impl#1}::ajouter_objet).15) (expr `self.liste_objets.iter().map(|objet| objet.poids)`)
+[WARN analysis/transform.rs:496] - necessary queries empty! []
+[WARN analysis/transform.rs:255] - failed to build method call table for HirId(DefId(0:11 ~ code_3[7473]::{impl#1}::ajouter_objet).11) (expr `self.liste_objets.iter().map(|objet| objet.poids).sum::<f64>()`)
+[INFO src/plugin.rs:303] - analyzing BodyId { hir_id: HirId(DefId(0:13 ~ code_3[7473]::{impl#1}::sac_a_dos_optimal).280) }
+[INFO analysis/mod.rs:33] - Typeck'ing body BodyId { hir_id: HirId(DefId(0:13 ~ code_3[7473]::{impl#1}::sac_a_dos_optimal).280) }
+thread 'rustc' panicked at compiler/rustc_infer/src/infer/region_constraints/mod.rs:434:23:
+index out of bounds: the len is 2 but the index is 6
+stack backtrace:
+   0: rust_begin_unwind
+             at /rustc/5d3d3479d774754856db2db3e439dfb88ef3c52f/library/std/src/panicking.rs:647:5
+   1: core::panicking::panic_fmt
+             at /rustc/5d3d3479d774754856db2db3e439dfb88ef3c52f/library/core/src/panicking.rs:72:14
+   2: core::panicking::panic_bounds_check
+             at /rustc/5d3d3479d774754856db2db3e439dfb88ef3c52f/library/core/src/panicking.rs:208:5
+   3: rustc_middle::ty::relate::structurally_relate_tys::<rustc_infer::infer::relate::generalize::Generalizer<rustc_infer::infer::relate::generalize::CombineDelegate>>
+   4: <rustc_infer::infer::relate::generalize::Generalizer<rustc_infer::infer::relate::generalize::CombineDelegate> as rustc_middle::ty::relate::TypeRelation>::tys
+   5: rustc_middle::ty::relate::structurally_relate_tys::<rustc_infer::infer::relate::generalize::Generalizer<rustc_infer::infer::relate::generalize::CombineDelegate>>
+   6: <rustc_infer::infer::relate::generalize::Generalizer<rustc_infer::infer::relate::generalize::CombineDelegate> as rustc_middle::ty::relate::TypeRelation>::tys
+   7: <rustc_infer::infer::relate::equate::Equate as rustc_middle::ty::relate::TypeRelation>::tys
+   8: <rustc_middle::ty::generic_args::GenericArg as rustc_middle::ty::relate::Relate>::relate
+   9: <core::result::Result<T,E> as rustc_type_ir::interner::CollectAndApply<T,R>>::collect_and_apply
+  10: rustc_infer::infer::relate::higher_ranked::<impl rustc_infer::infer::relate::combine::CombineFields>::higher_ranked_sub
+  11: rustc_infer::infer::InferCtxt::commit_if_ok
+  12: <rustc_infer::infer::InferCtxt as argus_lib::rustc::InferCtxtExt>::error_implies
+  13: argus_lib::analysis::tls::drain_implied_ambiguities
+  14: argus_lib::analysis::entry::process_obligation
+  15: <rustc_trait_selection::solve::fulfill::FulfillmentCtxt as rustc_infer::traits::engine::TraitEngine>::select_where_possible
+  16: <rustc_hir_typeck::fn_ctxt::FnCtxt>::check_argument_types
+  17: <rustc_hir_typeck::fn_ctxt::FnCtxt>::check_call
+  18: <rustc_hir_typeck::fn_ctxt::FnCtxt>::check_expr_with_expectation_and_args
+  19: <rustc_hir_typeck::fn_ctxt::FnCtxt>::check_match
+  20: <rustc_hir_typeck::fn_ctxt::FnCtxt>::check_expr_with_expectation_and_args
+  21: <rustc_hir_typeck::fn_ctxt::FnCtxt>::check_expr_with_expectation_and_args
+  22: <rustc_hir_typeck::fn_ctxt::FnCtxt>::check_block_with_expected
+  23: <rustc_hir_typeck::fn_ctxt::FnCtxt>::check_expr_with_expectation_and_args
+  24: rustc_hir_typeck::check::check_fn
+  25: rustc_hir_typeck::inspect_typeck
+  26: argus_lib::analysis::obligations
+  27: <argus_cli::plugin::ArgusCallbacks<A,T,F> as rustc_driver_impl::Callbacks>::after_expansion::{{closure}}::{{closure}}
+  28: alloc::vec::in_place_collect::<impl alloc::vec::spec_from_iter::SpecFromIter<T,I> for alloc::vec::Vec<T>>::from_iter
+  29: rustc_middle::ty::context::GlobalCtxt::enter
+  30: <argus_cli::plugin::ArgusCallbacks<A,T,F> as rustc_driver_impl::Callbacks>::after_expansion
+  31: rustc_interface::interface::run_compiler::<core::result::Result<(), rustc_span::ErrorGuaranteed>, rustc_driver_impl::run_compiler::{closure#0}>::{closure#0}
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+[WARN analysis/transform.rs:496] - necessary queries empty! []
+[WARN analysis/transform.rs:255] - failed to build method call table for HirId(DefId(0:13 ~ code_3[7473]::{impl#1}::sac_a_dos_optimal).231) (expr `solution.push(&self.liste_objets[i])`)
